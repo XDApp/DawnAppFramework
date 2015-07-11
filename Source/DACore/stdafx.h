@@ -33,6 +33,14 @@
 #include <zlib/zconf.h>
 #include <zlib/zlib.h>
 
+#include <rapidjson/document.h>
+#include <rapidjson/prettywriter.h>
+#include <rapidjson/filereadstream.h>
+#include <rapidjson/filewritestream.h>
+#include <rapidjson/stringbuffer.h> 
+
+
+
 #pragma comment (lib, "opengl32.lib")
 #pragma comment (lib, "zlib.lib")
 #pragma comment (lib, "libpng16.lib")
