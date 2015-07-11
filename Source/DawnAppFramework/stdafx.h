@@ -8,8 +8,27 @@
 #include "targetver.h"
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+#include <memory.h>
 #include <tchar.h>
+#include <math.h>
 
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <functional>
+#include <queue>
+#include <sstream>
+#include <thread>
+#include <mutex>
+#include <map>
+
+#include "DACore.h"
+
+#pragma comment (lib, "DACore.lib")
 
 
 // TODO: reference additional headers your program requires here

@@ -10,4 +10,10 @@ DObject::DObject()
 
 DObject::~DObject()
 {
+	DDel(this->DF);
+}
+
+void DObject::PullReference(const DObject* Object)
+{
+	this->DF->Clone(Object->DF);
 }
