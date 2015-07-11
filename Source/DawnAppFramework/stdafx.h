@@ -25,6 +25,8 @@
 #include <thread>
 #include <mutex>
 #include <map>
+#include <locale>
+#include <codecvt>
 
 #include "DACore.h"
 

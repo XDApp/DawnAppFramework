@@ -7,4 +7,5 @@
 #include <DACore/DEventManager.h>
 #include <DACore/DEventHandler.h>
 #include <DACore/DEngineManager.h>
+#include <DACore/DDebugManager.h>
 

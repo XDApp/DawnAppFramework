@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DDebugManager.h" />
     <ClInclude Include="DDefinition.h" />
     <ClInclude Include="DEngineManager.h" />
     <ClInclude Include="DEventHandler.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DDebugManager.cpp" />
     <ClCompile Include="DEngineManager.cpp" />
     <ClCompile Include="DEventHandler.cpp" />
     <ClCompile Include="DEventManager.cpp" />

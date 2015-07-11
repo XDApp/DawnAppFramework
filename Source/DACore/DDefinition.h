@@ -4,7 +4,9 @@
 #define DClass(className) \
 	public:\
 	virtual const char* ClassName() const { return _StaticClassName(); }\
-	static const char* _StaticClassName(){ return (#className); }
+	virtual const wchar_t* ClassName_W() const { return _StaticClassName_W(); }\
+	static const char* _StaticClassName(){ return (#className); }\
+	static const wchar_t* _StaticClassName_W(){ return (L#className); }
 
 //Dawn Object Safe Release
 #define DDel(objectName)\

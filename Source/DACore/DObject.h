@@ -3,11 +3,11 @@
 class DReference;
 class DObject
 {
-protected:
-	DReference *DF;
 public:
-	virtual const char* ClassName() const = 0;
+	DReference *DF;
 
+	virtual const char* ClassName() const = 0;
+	virtual const wchar_t* ClassName_W() const = 0;
 	DObject();
 	virtual ~DObject() = 0;
 
