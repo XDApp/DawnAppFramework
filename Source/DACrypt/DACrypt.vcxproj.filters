@@ -21,9 +21,30 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DCryptException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DACore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DRSAKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DCryptRSA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DCryptException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DRSAKey.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DCryptRSA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

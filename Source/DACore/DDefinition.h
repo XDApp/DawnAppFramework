@@ -1,5 +1,8 @@
 #pragma once
 
+class DReference;
+extern DReference *GlobalDF;
+
 //Dawn Class Declare
 #define DClass(className) \
 	public:\

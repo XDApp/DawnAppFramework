@@ -13,8 +13,14 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DACore", "DACore\DACore.vcxproj", "{4AF9E4D3-0FC7-47B6-9703-9DD3267E8276}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DANetwork", "DANetwork\DANetwork.vcxproj", "{EAB8BFD1-B50C-42A2-B2EA-1FD292693FB2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AF9E4D3-0FC7-47B6-9703-9DD3267E8276} = {4AF9E4D3-0FC7-47B6-9703-9DD3267E8276}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DACrypt", "DACrypt\DACrypt.vcxproj", "{56D69991-8005-465F-BA85-B8178617B393}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AF9E4D3-0FC7-47B6-9703-9DD3267E8276} = {4AF9E4D3-0FC7-47B6-9703-9DD3267E8276}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -156,6 +156,7 @@
     <ClInclude Include="DEngineManager.h" />
     <ClInclude Include="DEventHandler.h" />
     <ClInclude Include="DEventManager.h" />
+    <ClInclude Include="DException.h" />
     <ClInclude Include="DManager.h" />
     <ClInclude Include="DObject.h" />
     <ClInclude Include="DReference.h" />
@@ -167,6 +168,7 @@
     <ClCompile Include="DEngineManager.cpp" />
     <ClCompile Include="DEventHandler.cpp" />
     <ClCompile Include="DEventManager.cpp" />
+    <ClCompile Include="DException.cpp" />
     <ClCompile Include="DManager.cpp" />
     <ClCompile Include="DObject.cpp" />
     <ClCompile Include="DReference.cpp" />

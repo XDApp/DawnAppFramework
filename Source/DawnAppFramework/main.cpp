@@ -1,4 +1,6 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
+
+DReference *GlobalDF;
 
 class DApp
 {
@@ -8,6 +10,7 @@ public:
 	DApp()
 		: Engine(new DEngineManager())
 	{
+		GlobalDF = Engine->DF;
 		this->Engine->BeforeInitialize->AddHandler(new DEventHandler([](DObject* Sender)
 		{
 			Sender->DF->DebugManager = new DDebugManager();
@@ -26,7 +29,6 @@ public:
 	void Loop()
 	{
 		this->Engine->Update();
-		this->Engine->DF->DebugManager->Log(this->Engine, L"Debug!");
 		this->Engine->Render();
 	}
 };

@@ -11,8 +11,6 @@
 #include <tchar.h>
 #include <math.h>
 
-#include <winsock2.h>
-#pragma comment(lib, "WS2_32.lib")
 
 #include <iostream>
 #include <fstream>
@@ -33,3 +31,8 @@
 #include <openssl/rand.h>
 #include <openssl/evp.h>
 #include <openssl/engine.h>
+
+#include "DACore.h"
+
+#pragma comment(lib, "libeay32.lib")
+#pragma comment(lib, "ssleay32.lib")

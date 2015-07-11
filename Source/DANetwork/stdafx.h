@@ -4,6 +4,7 @@
 
 #define WIN32_LEAN_AND_MEAN     
 
+#include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
@@ -25,3 +26,7 @@
 #include <thread>
 #include <mutex>
 #include <map>
+#include <locale>
+#include <codecvt>
+
+#include "DACore.h"
