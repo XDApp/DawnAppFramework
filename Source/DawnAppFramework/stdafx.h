@@ -7,6 +7,8 @@
 
 #include "targetver.h"
 
+#include <WinSock2.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
@@ -29,7 +31,10 @@
 #include <codecvt>
 
 #include "DACore.h"
+#include "libDN.h"
 
 #pragma comment (lib, "DACore.lib")
+#pragma comment (lib, "DANetwork.lib")
+#pragma comment (lib, "DNService.lib")
 
 // TODO: reference additional headers your program requires here

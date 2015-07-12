@@ -16,6 +16,7 @@ public:
 		{
 			Sender->DF->DebugManager = new DDebugManager();
 			Sender->DF->ConfigManager = new DAppConfigManager();
+			DNServerDgramSocket *socket = new DNServerDgramSocket();
 		}));
 		this->Engine->AfterDispose->AddHandler(new DEventHandler([](DObject* Sender)
 		{

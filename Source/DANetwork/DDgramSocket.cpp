@@ -9,7 +9,6 @@ DDgramSocket::DDgramSocket()
 	{
 		GlobalDF->DebugManager->ThrowError<DNetworkException>(this, L"Invalid Socket");
 	}
-	int iMode = 1;
 }
 
 
