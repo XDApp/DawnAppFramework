@@ -9,5 +9,7 @@ public:
 
 	void Load();
 	void Save();
+
+	EVP_PKEY *RSAKey;
 };
 

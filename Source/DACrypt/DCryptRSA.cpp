@@ -43,11 +43,12 @@ void DCryptRSA::EVP_Encrypt(EVP_PKEY *key, unsigned char* &Crypt, size_t &CryptL
 	ENGINE *eng = nullptr;
 
 	ctx = EVP_PKEY_CTX_new(key, eng);
+
 	if (!ctx)
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to open Context");
 	if (EVP_PKEY_encrypt_init(ctx) <= 0)
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to initialize Context");
-	if (EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_PKCS1_PADDING) <= 0)
+	if (EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_PKCS1_OAEP_PADDING) <= 0)
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to set padding");
 	if (EVP_PKEY_encrypt(ctx, nullptr, &CryptLength, Origin, OriginLength) <= 0)
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to check buffer");
@@ -69,7 +70,7 @@ void DCryptRSA::EVP_Decrypt(EVP_PKEY *key, unsigned char* &Crypt, size_t &CryptL
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to open Context");
 	if (EVP_PKEY_decrypt_init(ctx) <= 0)
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to initialize Context");
-	if (EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_PKCS1_PADDING) <= 0)
+	if (EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_PKCS1_OAEP_PADDING) <= 0)
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to set padding");
 	if (EVP_PKEY_decrypt(ctx, nullptr, &CryptLength, Origin, OriginLength) <= 0)
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to check buffer");

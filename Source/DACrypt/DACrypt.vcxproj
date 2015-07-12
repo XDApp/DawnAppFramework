@@ -69,24 +69,24 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)\..\Bin_$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)\..\Bin_$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)\..\Include;$(SolutionDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\..\;$(SolutionDir)\..\Include;$(SolutionDir);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\..\Library\$(Platform)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)\..\Bin_$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)\..\Bin_$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)\..\Include;$(SolutionDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\..\;$(SolutionDir)\..\Include;$(SolutionDir);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\..\Library\$(Platform)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>$(SolutionDir)\..\Library\$(Platform)\;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)\..\Include;$(SolutionDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\..\;$(SolutionDir)\..\Include;$(SolutionDir);$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)\..\Bin_$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)\..\Bin_$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>$(SolutionDir)\..\Library\$(Platform)\;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)\..\Include;$(SolutionDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\..\;$(SolutionDir)\..\Include;$(SolutionDir);$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)\..\Bin_$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)\..\Bin_$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
