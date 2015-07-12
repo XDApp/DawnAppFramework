@@ -40,5 +40,5 @@ void DDebugManager::Log(const DObject* Sender, const wchar_t* Detail)
 
 void DDebugManager::ClassPrint(const DObject* Sender, const wchar_t* Level, const wchar_t* Detail)
 {
-	this->DebugPrint(Sender->ClassName_W(), Level, Detail);
+	this->DebugPrint(Sender == nullptr ? L"Unknown" : Sender->ClassName_W(), Level, Detail);
 }

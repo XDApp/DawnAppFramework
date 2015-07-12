@@ -1,9 +1,7 @@
 #pragma once
 
 class DSocketAddrIn
-	: public DObject
 {
-	DClass(DSocketAddrIn)
 private:
 	sockaddr_in sockAddr;
 	int AddrSize;

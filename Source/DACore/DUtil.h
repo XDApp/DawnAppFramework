@@ -10,5 +10,8 @@ public:
 
 	static std::wstring StringAtoW(const std::string &Origin);
 	static std::string StringWtoA(const std::wstring &Origin);
+
+	static std::wstring ANSIToUnicode(const std::string& str);
+	static std::string UnicodeToANSI(const std::wstring& str);
 };
 

@@ -16,7 +16,7 @@ void DEventManager::Call(DObject* Sender)
 {
 	for (DEventHandler* Callback : this->CallbackList)
 	{
-		Callback->Run(this);
+		Callback->Run(Sender);
 	}
 }
 void DEventManager::AddHandler(DEventHandler *Callback)
