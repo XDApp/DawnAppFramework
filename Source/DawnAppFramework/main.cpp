@@ -1,4 +1,5 @@
 ﻿#include "stdafx.h"
+#include "DAppConfigManager.h"
 
 DReference *GlobalDF;
 
@@ -14,10 +15,12 @@ public:
 		this->Engine->BeforeInitialize->AddHandler(new DEventHandler([](DObject* Sender)
 		{
 			Sender->DF->DebugManager = new DDebugManager();
+			Sender->DF->ConfigManager = new DAppConfigManager();
 		}));
 		this->Engine->AfterDispose->AddHandler(new DEventHandler([](DObject* Sender)
 		{
 			DDel(Sender->DF->DebugManager);
+			DDel(Sender->DF->ConfigManager);
 		}));
 	};
 

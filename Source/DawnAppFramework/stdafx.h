@@ -32,5 +32,4 @@
 
 #pragma comment (lib, "DACore.lib")
 
-
 // TODO: reference additional headers your program requires here

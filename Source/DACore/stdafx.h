@@ -27,6 +27,7 @@
 #include <map>
 #include <locale>
 #include <codecvt>
+#include <memory>
 
 #define GLEW_MX
 #define GLEW_STATIC

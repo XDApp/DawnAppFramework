@@ -28,5 +28,6 @@
 #include <map>
 #include <locale>
 #include <codecvt>
+#include <memory>
 
 #include "DACore.h"

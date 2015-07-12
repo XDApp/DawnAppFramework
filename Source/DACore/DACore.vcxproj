@@ -96,7 +96,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -109,7 +109,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -124,7 +124,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -141,7 +141,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -151,27 +151,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DConfigManager.h" />
     <ClInclude Include="DDebugManager.h" />
     <ClInclude Include="DDefinition.h" />
     <ClInclude Include="DEngineManager.h" />
     <ClInclude Include="DEventHandler.h" />
     <ClInclude Include="DEventManager.h" />
     <ClInclude Include="DException.h" />
+    <ClInclude Include="DIOException.h" />
+    <ClInclude Include="DIOJSONFileStream.h" />
+    <ClInclude Include="DIOStream.h" />
     <ClInclude Include="DManager.h" />
     <ClInclude Include="DObject.h" />
     <ClInclude Include="DReference.h" />
+    <ClInclude Include="DUtil.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DConfigManager.cpp" />
     <ClCompile Include="DDebugManager.cpp" />
     <ClCompile Include="DEngineManager.cpp" />
     <ClCompile Include="DEventHandler.cpp" />
     <ClCompile Include="DEventManager.cpp" />
     <ClCompile Include="DException.cpp" />
+    <ClCompile Include="DIOException.cpp" />
+    <ClCompile Include="DIOJSONFileStream.cpp" />
+    <ClCompile Include="DIOStream.cpp" />
     <ClCompile Include="DManager.cpp" />
     <ClCompile Include="DObject.cpp" />
     <ClCompile Include="DReference.cpp" />
+    <ClCompile Include="DUtil.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
