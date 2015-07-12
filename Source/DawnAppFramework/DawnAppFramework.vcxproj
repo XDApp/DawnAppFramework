@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DACore.h" />
+    <ClInclude Include="DACrypt.h" />
     <ClInclude Include="DANetwork.h" />
     <ClInclude Include="DAppConfigManager.h" />
     <ClInclude Include="libDN.h" />

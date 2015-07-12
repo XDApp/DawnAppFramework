@@ -10,6 +10,7 @@
 #include <memory.h>
 #include <tchar.h>
 #include <math.h>
+#include <string.h>
 
 
 #include <iostream>
@@ -25,6 +26,7 @@
 #include <map>
 
 #include <openssl/rsa.h>
+#include <openssl/conf.h>
 #include <openssl/err.h>
 #include <openssl/pem.h>
 #include <openssl/x509.h>
@@ -32,7 +34,8 @@
 #include <openssl/evp.h>
 #include <openssl/engine.h>
 
+
 #include "DACore.h"
 
-#pragma comment(lib, "libeay32.lib")
-#pragma comment(lib, "ssleay32.lib")
+#pragma comment (lib, "libeay32.lib")
+#pragma comment (lib, "ssleay32.lib")

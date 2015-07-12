@@ -10,6 +10,7 @@
 #include <memory.h>
 #include <tchar.h>
 #include <math.h>
+#include <string.h>
 
 #include <iostream>
 #include <fstream>
@@ -25,9 +26,21 @@
 #include <locale>
 #include <codecvt>
 
+#include <openssl/rsa.h>
+#include <openssl/conf.h>
+#include <openssl/err.h>
+#include <openssl/pem.h>
+#include <openssl/x509.h>
+#include <openssl/rand.h>
+#include <openssl/evp.h>
+#include <openssl/engine.h>
+
 #include "DACore.h"
+#include "DACrypt.h"
 #include "libDN.h"
 
 #pragma comment (lib, "DACore.lib")
 #pragma comment (lib, "DANetwork.lib")
+#pragma comment (lib, "DACrypt.lib")
 #pragma comment (lib, "DNService.lib")
+
