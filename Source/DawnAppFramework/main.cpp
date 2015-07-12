@@ -64,8 +64,8 @@ public:
 int test_Crypt(void)
 {
 	char* buff = "I'm SkyZH!";
-	unsigned char* __Ori = (unsigned char*)malloc(sizeof(char) * 200);
-	unsigned char* __Dest = (unsigned char*)malloc(sizeof(char) * 200);
+	unsigned char* __Ori = (unsigned char*)malloc(sizeof(char) * 500);
+	unsigned char* __Dest = (unsigned char*)malloc(sizeof(char) * 500);
 
 	memcpy(__Ori, buff, strlen(buff) + 1);
 
@@ -74,7 +74,6 @@ int test_Crypt(void)
 	DCryptRSA::Initialize();
 
 	DRSAKey *Key = new DRSAKey(2048);
-	
 	EVP_PKEY *PubKey = DCryptRSA::ToEVP(Key->GetKey());
 	EVP_PKEY *PriKey = DCryptRSA::ToEVP(Key->GetKey());
 
@@ -82,20 +81,23 @@ int test_Crypt(void)
 	printf("Ciphertext is:\n");
 	BIO_dump_fp(stdout, (const char *)__Dest, __DestSize);
 
-	memset(__Ori, 0, sizeof(__Ori));
+	OPENSSL_free(__Ori);
 	DCryptRSA::EVP_Decrypt(PriKey, __Ori, __OriSize, __Dest, __DestSize);
 	BIO_dump_fp(stdout, (const char *)__Ori, __OriSize);
 	std::cout << __Ori << std::endl;
+	OPENSSL_free(__Dest);
 
 	DCryptRSA::EVP_Encrypt(PubKey, __Dest, __DestSize, __Ori, __OriSize);
 	printf("Ciphertext is:\n");
 	BIO_dump_fp(stdout, (const char *)__Dest, __DestSize);
-	memset(__Ori, 0, sizeof(__Ori));
+
+
+	OPENSSL_free(__Ori);
 
 	DCryptRSA::EVP_Decrypt(PriKey, __Ori, __OriSize, __Dest, __DestSize);
 	BIO_dump_fp(stdout, (const char *)__Ori, __OriSize);
 	std::cout << __Ori << std::endl;
-
+	OPENSSL_free(__Dest);
 
 	DCryptRSA::Dispose();
 	return 0;
