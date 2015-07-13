@@ -4,7 +4,8 @@
 
 const int DRSAKEY_RAND_BUFFER = 1000;
 DRSAKey::DRSAKey(unsigned long Key_Length)
-	: rsa(nullptr)
+	: rsa(nullptr),
+	DefaultPassword("asdfghjkl")
 {
 	rsa = RSA_generate_key(Key_Length, RSA_F4, NULL, NULL);
 	if (rsa == NULL)
@@ -29,59 +30,52 @@ RSA* DRSAKey::GetKey()
 	return rsa;
 }
 
-void DRSAKey::WritePubBuf()
-{
-	keybio = BIO_new(BIO_s_mem());
-	if (keybio == nullptr)
-	{
-		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to create key BIO");
-		return;
-	}
-	PEM_write_bio_RSAPublicKey(keybio, this->rsa);
-}
-
-void DRSAKey::WritePriBuf()
-{
-	keybio = BIO_new(BIO_s_mem());
-	if (keybio == nullptr)
-	{
-		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to create key BIO");
-		return;
-	}
-	PEM_write_bio_RSAPrivateKey(keybio, this->rsa, nullptr, nullptr, -1, nullptr, nullptr);
-}
-
-
 RSA* DRSAKey::GetPubKey()
 {
-	this->WritePubBuf();
-	RSA *result = nullptr;
-	
-	BIO_reset(this->keybio);
-
+	BIO *keybio = nullptr;
+	keybio = BIO_new(BIO_s_mem());
 	if (keybio == nullptr)
 	{
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to create key BIO");
-		return 0;
+		return nullptr;
 	}
-	result = PEM_read_bio_RSA_PUBKEY(keybio, &this->rsa, NULL, NULL);
-	BIO_free_all(keybio);
+	PEM_write_bio_RSAPublicKey(keybio, this->rsa);
+
+	RSA *result = nullptr;
+	
+	if (keybio == nullptr)
+	{
+		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to create key BIO");
+		return nullptr;
+	}
+	
+	PEM_read_bio_RSAPublicKey(keybio, &result, nullptr, nullptr);
+	BIO_free(keybio);
+
 	return result;
 }
 
 RSA* DRSAKey::GetPriKey()
 {
-	this->WritePriBuf();
-	RSA *result = nullptr;
-
-	BIO_reset(this->keybio);
-
+	BIO *keybio = nullptr;
+	keybio = BIO_new(BIO_s_mem());
 	if (keybio == nullptr)
 	{
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to create key BIO");
-		return 0;
+		return nullptr;
 	}
-	result = PEM_read_bio_RSAPrivateKey(keybio, &this->rsa, NULL, NULL);
-	BIO_free_all(keybio);
+	PEM_write_bio_RSAPrivateKey(keybio, this->rsa, EVP_des_ede3_cbc(), nullptr, -1, nullptr, (void *)this->DefaultPassword);
+
+	RSA *result = nullptr;
+	
+	if (keybio == nullptr)
+	{
+		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to create key BIO");
+		return nullptr;
+	}
+
+	PEM_read_bio_RSAPrivateKey(keybio, &result, nullptr, (void *)this->DefaultPassword);
+	BIO_free(keybio);
+	
 	return result;
 }

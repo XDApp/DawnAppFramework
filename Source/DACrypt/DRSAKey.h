@@ -6,7 +6,7 @@ class DRSAKey
 	DClass(DRSAKey)
 private:
 	RSA *rsa;
-	BIO *keybio;
+	const char* DefaultPassword;
 public:
 	DRSAKey(unsigned long Key_Length);
 	DRSAKey(RSA *Rsa);
