@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DConfigManager.h" />
+    <ClInclude Include="DCoreConfigManager.h" />
     <ClInclude Include="DDebugManager.h" />
     <ClInclude Include="DDefinition.h" />
     <ClInclude Include="DEngineManager.h" />
@@ -170,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DConfigManager.cpp" />
+    <ClCompile Include="DCoreConfigManager.cpp" />
     <ClCompile Include="DDebugManager.cpp" />
     <ClCompile Include="DEngineManager.cpp" />
     <ClCompile Include="DEventHandler.cpp" />

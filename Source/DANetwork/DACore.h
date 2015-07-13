@@ -9,3 +9,5 @@
 #include <DACore/DEngineManager.h>
 #include <DACore/DDebugManager.h>
 #include <DACore/DException.h>
+#include <DACore/DConfigManager.h>
+#include <DACore/DCoreConfigManager.h>

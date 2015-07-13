@@ -52,12 +52,8 @@ void DCryptRSA::EVP_Encrypt(EVP_PKEY *key, unsigned char* &Crypt, size_t &CryptL
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to set padding");
 	if (EVP_PKEY_encrypt(ctx, nullptr, &CryptLength, Origin, OriginLength) <= 0)
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to check buffer");
-	Crypt = (unsigned char*)OPENSSL_malloc(CryptLength);
 	if (EVP_PKEY_encrypt(ctx, Crypt, &CryptLength, Origin, OriginLength) <= 0)
-	{
-		ERR_print_errors_fp(stdout);
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to encrypt");
-	}
 }
 
 void DCryptRSA::EVP_Decrypt(EVP_PKEY *key, unsigned char* &Crypt, size_t &CryptLength, const unsigned char* Origin, const size_t OriginLength)
@@ -74,12 +70,8 @@ void DCryptRSA::EVP_Decrypt(EVP_PKEY *key, unsigned char* &Crypt, size_t &CryptL
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to set padding");
 	if (EVP_PKEY_decrypt(ctx, nullptr, &CryptLength, Origin, OriginLength) <= 0)
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to check buffer");
-	Crypt =(unsigned char*) OPENSSL_malloc(CryptLength);
 	if (EVP_PKEY_decrypt(ctx, Crypt, &CryptLength, Origin, OriginLength) <= 0)
-	{
-		ERR_print_errors_fp(stdout);
 		GlobalDF->DebugManager->ThrowError<DCryptException>(nullptr, L"Failed to decrypt");
-	}
 }
 const int DCRYPTRSA_PADDING = RSA_PKCS1_OAEP_PADDING;
 
