@@ -14,6 +14,8 @@ extern DReference *GlobalDF;
 //Dawn Object Safe Release
 #define DDel(objectName)\
 	if(objectName) delete objectName
+#define DArrDel(objectName)\
+	delete []objectName
 
 //Dawn Framework Color
 using DColor = unsigned long;
