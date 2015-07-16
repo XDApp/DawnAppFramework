@@ -33,6 +33,12 @@
     <ClInclude Include="DCryptRSA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DCryptAES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DAESKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -45,6 +51,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DCryptRSA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DCryptAES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DAESKey.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

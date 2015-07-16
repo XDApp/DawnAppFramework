@@ -152,6 +152,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DACore.h" />
+    <ClInclude Include="DAESKey.h" />
+    <ClInclude Include="DCryptAES.h" />
     <ClInclude Include="DCryptException.h" />
     <ClInclude Include="DCryptRSA.h" />
     <ClInclude Include="DRSAKey.h" />
@@ -159,6 +161,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DAESKey.cpp" />
+    <ClCompile Include="DCryptAES.cpp" />
     <ClCompile Include="DCryptException.cpp" />
     <ClCompile Include="DCryptRSA.cpp" />
     <ClCompile Include="DRSAKey.cpp" />

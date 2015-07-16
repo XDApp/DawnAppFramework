@@ -15,9 +15,5 @@ public:
 
 	RSA* GetPriKey();
 	RSA* GetPubKey();
-
-	void WritePubBuf();
-	void WritePriBuf();
-
 };
 
